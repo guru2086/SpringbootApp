@@ -1,8 +1,13 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:18
 
+# Set the working directory
+WORKDIR /app
+
+# Copy the JAR file into the container
+COPY target/my-app.jar app.jar
+
+# Expose port 8080
 EXPOSE 8080
 
-COPY ./build/libs/blucore-0.0.1-SNAPSHOT.jar /usr/app/
-WORKDIR /usr/app
-
-ENTRYPOINT ["java", "-jar", "blucore-0.0.1-SNAPSHOT.jar"]
+# Entrypoint
+ENTRYPOINT ["java", "-jar", "app.jar"]
