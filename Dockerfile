@@ -4,7 +4,7 @@ FROM openjdk:18
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/my-app.jar app.jar
+COPY /home/runner/work/SpringbootApp/SpringbootApp/target/blucore-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port 8080
 EXPOSE 8080
