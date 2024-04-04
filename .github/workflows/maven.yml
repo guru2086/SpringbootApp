@@ -48,11 +48,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: user/app:latest
-      
+        
+      - name: Build Docker image
+        run: docker build -t my-spring-boot-app .
+
+      - name: Push Docker image
+        run: docker push my-spring-boot-app
         
