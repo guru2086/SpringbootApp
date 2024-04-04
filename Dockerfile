@@ -1,13 +1,8 @@
-FROM openjdk:18
+FROM 455480051272.dkr.ecr.us-east-1.amazonaws.com/java:amazoncorretto-17-alpine-jdk
 
-# Set the working directory
+ENV -DSERVER_PORT 80
+COPY build/libs/*.jar /app/
 WORKDIR /app
-
-# Copy the JAR file into the container
-COPY /home/runner/work/SpringbootApp/SpringbootApp/target/blucore-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose port 8080
 EXPOSE 8080
 
-# Entrypoint
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT /app/start.sh
