@@ -33,6 +33,9 @@ jobs:
         
       - name: print my directory here
         run: ls -al
+        
+      - name: print my directory and files here
+        run: tree -a
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
