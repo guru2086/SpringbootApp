@@ -53,5 +53,5 @@ jobs:
         run: docker build -t my-spring-boot-app .
 
       - name: Push Docker image
-        run: docker push my-spring-boot-app
+        run: docker push blucoreconsultants/test-repo:my-spring-boot-app
         
