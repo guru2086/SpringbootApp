@@ -1,4 +1,4 @@
-FROM 455480051272.dkr.ecr.us-east-1.amazonaws.com/java:amazoncorretto-17-alpine-jdk
+FROM openjdk:18
 
 ENV -DSERVER_PORT 80
 COPY build/libs/*.jar /app/
