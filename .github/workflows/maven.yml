@@ -57,5 +57,5 @@ jobs:
         run: docker image ls
 
       - name: Push Docker image
-        run: docker push blucoreconsultants/test-repo:test
+        run: docker push test
         
