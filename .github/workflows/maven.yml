@@ -50,10 +50,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
         
       - name: Build Docker image
-        run: docker build -t my-spring-boot-app .
+        run: docker build -t my-spring-boot-app:01 .
       - name: create tag
-        run: docker tag my-spring-boot-app test-repo:my-spring-boot-app
+        run: docker tag my-spring-boot-app:01 my-spring-boot-app:test
 
       - name: Push Docker image
-        run: docker push blucoreconsultants/test-repo:my-spring-boot-app
+        run: docker push blucoreconsultants/test-repo:test
         
