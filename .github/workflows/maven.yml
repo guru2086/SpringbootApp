@@ -53,6 +53,8 @@ jobs:
         run: docker build -t my-spring-boot-app:01 .
       - name: create tag
         run: docker tag my-spring-boot-app:01 my-spring-boot-app:test
+      - name: find images
+        run: docker image ls
 
       - name: Push Docker image
         run: docker push blucoreconsultants/test-repo:test
